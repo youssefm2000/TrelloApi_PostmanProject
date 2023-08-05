@@ -31,6 +31,8 @@
 
      ### 📄 Jenkins Running:
     ![Screenshot 2023-08-05 221722](https://github.com/youssefm2000/TrelloApi_PostmanProject/assets/74185165/53af8164-e177-4fab-b263-c5cfc3c59614)
+     ### 📄 HTML Report:
+    ![Screenshot 2023-08-05 221644](https://github.com/youssefm2000/TrelloApi_PostmanProject/assets/74185165/556788e3-b6b5-4dba-b4c4-42263bffc8d2)
 
     
 
