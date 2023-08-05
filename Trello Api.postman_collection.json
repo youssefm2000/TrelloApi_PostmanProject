@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "03619e88-8cd8-47a0-9cd1-937de3b289e3",
+		"name": "Trello Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26567788",
+		"_collection_link": "https://www.postman.com/technical-cosmologist-51969849/workspace/projects/collection/26567788-03619e88-8cd8-47a0-9cd1-937de3b289e3?action=share&creator=26567788&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get First Api Call",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/members/me/boards?key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"members",
+						"me",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/boards?name=Learning Postman 4&key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Learning Postman 4"
+						},
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/boards/:idBoard?key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":idBoard"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "idBoard",
+							"value": "64cc2d416aecd8de776c73e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Craete A List In Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/boards/:idBorad/lists?name=TODO 2&key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":idBorad",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TODO 2"
+						},
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "idBorad",
+							"value": "64cc2d416aecd8de776c73e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A new Card In List In Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/cards?name=Log In By Youssef&idList=64cc2d771f2bace081541251&key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Log In By Youssef"
+						},
+						{
+							"key": "idList",
+							"value": "64cc2d771f2bace081541251"
+						},
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Craete A Second List In Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Closed shoud contains false value\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.closed).to.eql(false);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/boards/:idBorad/lists?name=Doing TODO&key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":idBorad",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Doing TODO"
+						},
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "idBorad",
+							"value": "64cc2d416aecd8de776c73e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A new Card In List In Board Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/cards?name=Hello Youssef&idList=64cc2da9a8ae48fbbae35560&key={{trellokey}}&token={{trellotoken}}",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Hello Youssef"
+						},
+						{
+							"key": "idList",
+							"value": "64cc2da9a8ae48fbbae35560"
+						},
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Card To Another List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/1/cards/:id?key={{trellokey}}&token={{trellotoken}}&idList=64cc2d771f2bace081541251&idBoard=64cc2d416aecd8de776c73e8",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{trellokey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trellotoken}}"
+						},
+						{
+							"key": "idList",
+							"value": "64cc2d771f2bace081541251"
+						},
+						{
+							"key": "idBoard",
+							"value": "64cc2d416aecd8de776c73e8"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "64cc2e220ade1a472bd7008f"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "https://api.trello.com",
+			"type": "string"
+		},
+		{
+			"key": "trellokey",
+			"value": "ced6bacafec1adab346bddb196d1fd29",
+			"type": "string"
+		},
+		{
+			"key": "trellotoken",
+			"value": "ATTA56f13a9dee810c18aeebe18a08cd6376dc7cca3eeb149a52f3cca4409fef39940A3A926B",
+			"type": "string"
+		}
+	]
+}
