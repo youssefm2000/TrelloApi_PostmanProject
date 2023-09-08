@@ -19,7 +19,7 @@
   - #### ✅Request 5: Create A new Card In List In Board
     - #### Http Method : Post
       *Create A Card In TODO called "Log In By Youssef"*
-  - #### ✅Request 6: Craete A Second List In Board
+  - #### ✅Request 6: Create A Second List In Board
     - #### Http Method : Post
       *Create A Second List In Learning Trello4 called "Doing TODO"*
   - #### ✅Request 7: Create A new Card In List In Board 
